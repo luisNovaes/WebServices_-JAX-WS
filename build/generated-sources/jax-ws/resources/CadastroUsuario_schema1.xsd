@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://dao.projeto.com.br/" xmlns:tns="http://dao.projeto.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ParseException" type="tns:ParseException"/>
+
+  <xs:element name="atualizarusuario" type="tns:atualizarusuario"/>
+
+  <xs:element name="atualizarusuarioResponse" type="tns:atualizarusuarioResponse"/>
+
+  <xs:element name="buscarTodos" type="tns:buscarTodos"/>
+
+  <xs:element name="buscarTodosResponse" type="tns:buscarTodosResponse"/>
+
+  <xs:element name="excluirUsuaraio" type="tns:excluirUsuaraio"/>
+
+  <xs:element name="excluirUsuaraioResponse" type="tns:excluirUsuaraioResponse"/>
+
+  <xs:element name="inserirUsuario" type="tns:inserirUsuario"/>
+
+  <xs:element name="inserirUsuarioResponse" type="tns:inserirUsuarioResponse"/>
+
+  <xs:element name="selectusuario" type="tns:selectusuario"/>
+
+  <xs:element name="selectusuarioResponse" type="tns:selectusuarioResponse"/>
+
+  <xs:complexType name="excluirUsuaraio">
+    <xs:sequence>
+      <xs:element name="nomeUsuario" type="xs:string" minOccurs="0"/>
+      <xs:element name="senha" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="excluirUsuaraioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="selectusuario">
+    <xs:sequence>
+      <xs:element name="nomeUsuario" type="xs:string" minOccurs="0"/>
+      <xs:element name="senha" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="selectusuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="dataNascimento" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="senha" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="atualizarusuario">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="senha" type="xs:string" minOccurs="0"/>
+      <xs:element name="dadaNascimento" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="atualizarusuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParseException">
+    <xs:sequence>
+      <xs:element name="errorOffset" type="xs:int"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserirUsuario">
+    <xs:sequence>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="senha" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="dataNascimento" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inserirUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buscarTodos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="buscarTodosResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
